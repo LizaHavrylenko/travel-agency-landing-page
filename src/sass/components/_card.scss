@@ -1,0 +1,170 @@
+.card {
+    position: relative;
+    perspective: 120rem;
+    -moz-perspective: 120rem;
+    height: 44rem;
+    @include respond(tab-port) {
+        height: 55rem;
+        margin-bottom: 2rem;
+    }
+
+    &__side {
+        height: 44rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 2px;
+        box-shadow: 0 1.5rem 3rem rgba($color-black, .3);
+        @include respond(tab-port) {
+            height: 55rem;
+        }
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $card-color-1-light, $card-color-1-dark);
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $card-color-2-light, $card-color-2-dark);
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, $card-color-3-light, $card-color-3-dark);
+            }
+
+            &-4 {
+                background-image: linear-gradient(to right bottom, $card-color-4-light, $card-color-4-dark);
+            }
+        }
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(-180deg);
+    }
+
+    //Front side styles
+
+    &__heading {
+        font-size: 2rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: left;
+        color: $color-white;
+        position: absolute;
+        top: 3rem;
+        left: 2rem;
+        width: 70%;
+    
+    }
+
+    &__heading-span {
+        padding: 1rem 1rem;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, 
+            rgba($card-color-1-light, .85), 
+            rgba($card-color-1-dark, .85));
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, 
+            rgba($card-color-2-light, .85), 
+            rgba($card-color-2-dark, .85));
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, 
+            rgba($card-color-3-light, .85), 
+            rgba($card-color-3-dark, .85));
+        }
+
+        &--4 {
+            background-image: linear-gradient(to right bottom, 
+            rgba($card-color-4-light, .85), 
+            rgba($card-color-4-dark, .85));
+        }
+    }
+
+
+    &__details {
+        padding: 2rem 1rem 1rem;
+
+        ul {
+            list-style: none;
+            width: 90%;
+            margin: 0 auto;
+
+            li {
+                text-align: center;
+                font-size: 1.6rem;
+                padding: .5rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-dark-2;
+                }
+            }
+        }
+    }
+    
+
+    &__color {
+        background-size: cover;
+        height: 20rem;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 85% 70%, 65% 90%, 55% 80%, 40% 95%, 35% 80%, 30% 95%, 25% 85%, 10% 90%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 85% 70%, 65% 90%, 55% 80%, 40% 95%, 35% 80%, 30% 95%, 25% 85%, 10% 90%, 0 100%);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        
+        &--1 {
+            background-image: linear-gradient(to right bottom, $card-color-1-light, $card-color-1-dark);
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, $card-color-2-light, $card-color-2-dark); 
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, $card-color-3-light, $card-color-3-dark); 
+        }
+
+        &--4 {
+            background-image: linear-gradient(to right bottom, $card-color-4-light, $card-color-4-dark); 
+        }
+    }
+
+    //Back side styles
+    &__prices {
+        text-align: center;
+        color: $color-white;
+        margin-bottom: 8rem;
+    }
+
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__price-value {
+        font-size: 5rem;
+        font-weight: 100;
+    }
+}

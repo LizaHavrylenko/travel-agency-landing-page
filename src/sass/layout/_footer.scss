@@ -1,0 +1,65 @@
+.footer {
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 1.7rem;
+    font-weight: 400;
+    position: relative;
+    padding: 30rem 0 5rem;
+    margin-top: -30vh;
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        -webkit-clip-path: polygon(0 0, 15% 30vh, 35% 10vh, 45% 20vh, 60% 5vh, 65% 20vh, 70% 5vh, 75% 15vh, 90% 10vh, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 15% 30vh, 35% 10vh, 45% 20vh, 60% 5vh, 65% 20vh, 70% 5vh, 75% 15vh, 90% 10vh, 100% 0, 100% 100%, 0 100%);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; 
+        left: 0;
+        height: 35vh;
+        width: 100%;
+        background-color: $color-primary;
+        display: block;
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-clip-path: polygon(0 0, 15% 30vh, 35% 10vh, 45% 20vh, 60% 5vh, 65% 20vh, 70% 5vh, 75% 15vh, 90% 10vh, 100% 0,
+            100% 5vh, 90% 15vh, 75% 20vh, 70% 10vh, 65% 25vh, 60% 10vh, 45% 25vh, 35% 15vh, 15% 35vh, 0 5vh);
+            clip-path: polygon(0 0, 15% 30vh, 35% 10vh, 45% 20vh, 60% 5vh, 65% 20vh, 70% 5vh, 75% 15vh, 90% 10vh, 100% 0,
+            100% 5vh, 90% 15vh, 75% 20vh, 70% 10vh, 65% 25vh, 60% 10vh, 45% 25vh, 35% 15vh, 15% 35vh, 0 5vh);
+        }
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            color: $color-white;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all .4s;
+            padding: 5px;
+            border-bottom: 1px solid $color-light;
+            margin-left: 2.5rem;
+        }
+
+        &:hover,
+        &:active {
+            color: $color-grey-dark-3;
+            background-color: $color-light;
+            box-shadow: 0 1rem 2rem rgba($color-black, .4);
+            transform: translateY(-1rem) scale(1.2);
+        }
+    }
+
+    &__list, &__copyright {
+        @include respond(tab-port) {
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+        }
+    }
+}

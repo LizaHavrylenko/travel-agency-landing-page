@@ -1,0 +1,38 @@
+.images-set {
+    position: relative;
+    @include respond(tab-port) {
+        margin: 0 2rem;
+    }
+
+    &__photo {
+        width: 52%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .5);
+        border-radius: 2px;
+        position: absolute;
+        z-index: 2;
+        transition: all .15s;
+        outline-offset: 1rem;
+
+        &--p1 {
+            top: 3rem;
+            left: -2rem;
+        }
+
+        &--p2 {
+            top: -3rem;
+            right: .5rem;
+        }
+
+        &--p3 {
+            top: 13rem;
+            left: 15rem;
+        }
+
+        &:hover {
+            outline: 1rem solid $color-primary;
+            transform: scale(1.05) translateY(-.5rem);
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            z-index: 3;
+        }
+    }
+}
