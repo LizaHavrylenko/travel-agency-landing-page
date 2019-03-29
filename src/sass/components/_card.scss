@@ -2,14 +2,14 @@
     position: relative;
     perspective: 120rem;
     -moz-perspective: 120rem;
-    height: 44rem;
+    height: 45rem;
     @include respond(tab-port) {
         height: 55rem;
         margin-bottom: 2rem;
     }
 
     &__side {
-        height: 44rem;
+        height: 45rem;
         transition: all .8s ease;
         position: absolute;
         top: 0;
@@ -21,6 +21,14 @@
         box-shadow: 0 1.5rem 3rem rgba($color-black, .3);
         @include respond(tab-port) {
             height: 55rem;
+            width: 50%;
+            margin-left: 25%;
+        }
+
+        @include respond(phone) {
+            height: 55rem;
+            width: 60%;
+            margin-left: 20%;
         }
 
         &--front {

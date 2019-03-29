@@ -4,11 +4,15 @@
     &:visited {
         text-transform: uppercase;
         text-decoration: none;
-        padding: 1.8rem 2.5rem;
+        padding: 1.2rem 2.8rem;
         display: inline-block;
         border-radius: 10rem;
         transition: all .4s;
         font-size: 1.8rem;
+
+        @include respond(tab-land) {
+            font-size: 1.5rem;
+        }
     }
  
     &-book {
@@ -27,6 +31,18 @@
         opacity: 1;
         transform: translateY(-3px);
         box-shadow: 0 1rem 2.2rem rgba($color-black,.4);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+        margin-left: 12.5%;
+        width: 75%;
+        text-align: center;
+
+        &::after {
+            background-color: $color-white;
+        }
     }
  
     &--violet {
